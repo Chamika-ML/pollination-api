@@ -826,7 +826,7 @@ def final_temporal_map():
 
 # In[9]:
 
-
+"""
 list_a = [-35.083200762,-35.142200762,143.251973043,143.316973043]
 
 
@@ -874,7 +874,7 @@ data_set.shape
 
 
 # In[ ]:
-
+"""
 
 """
 API key for the python programm:
