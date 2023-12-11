@@ -225,7 +225,7 @@ def final_probability(data_set,lat,long):
         spatial_prob_data = pd.read_csv("./results/csv/Grid PDF PI.csv")        
     
     #load weather description porbability data set
-    weather_desc_data = pd.read_excel("./data/csv/weather_description_map.xlsx")
+    weather_desc_data = pd.read_csv("./data/csv/weather_description_map.csv")
     # genarate weather probability using mean ratings
     weather_desc_data["Probability"] = (weather_desc_data["Mean Ratings"]-1)/(10-1)
 
@@ -844,18 +844,6 @@ final_map
 # In[ ]:
 
 
-data_set.head()
-
-
-# In[ ]:
-
-
-data_set.shape
-
-
-# In[ ]:
-
-
 
 
 
@@ -867,19 +855,7 @@ data_set.shape
 
 # In[ ]:
 
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 """
-
 """
 API key for the python programm:
 http://127.0.0.1:7777/pollination/?minLat=-35.083200762&maxLat=-35.142200762&minLon=143.251973043&maxLon=143.316973043
