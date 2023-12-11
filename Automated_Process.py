@@ -769,20 +769,24 @@ def final_heatmap(dataset, image_path=" "):
 
 
 def final_temporal_map_api(min_lat,max_lat,min_lon,max_lon):
-    
+
     """This is the final fuction that we need to call when we are using api"""
-    
+
     lat, long, cols, raws = api_to_latlong(min_lat,max_lat,min_lon,max_lon)
-    dataset = download_weather_data(lat,long,cols, raws)
+    dataset = download_weather_data(lat,long,20, 1)
     dataset = solar_activation_time(dataset)
     dataset = add_date_time(dataset)
     dataset = final_probability(dataset,lat,long)
     final_map = final_heatmap(dataset,"./images/study_area.JPG")
     dataset.to_csv("./results/csv/final_automated_weather_data.csv", index=False)
     final_map.save("./results/maps/final_map_API_call.html")
-    
-    
-    return final_map, dataset
+
+    html_file_path = "./results/maps/final_map_API_call.html"
+
+    with open(html_file_path, 'r', encoding='utf-8') as file:
+        html_content = file.read()
+
+    return html_content
 
 
 def final_temporal_map():
